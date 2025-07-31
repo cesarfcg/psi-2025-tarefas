@@ -1,0 +1,33 @@
+{% extends "tarefas/base.html" %}
+{% block title %}Lista de tarefas{% endblock title %}
+{% block context %}
+
+<div class="container">
+  <!-- Cabeçalho das colunas -->
+  <div class="row fw-bold border-bottom mb-2">
+    <div class="col">Nome</div>
+    <div class="col">Prazo</div>
+    <div class="col">Status</div>
+    <div class="col">Situação</div>
+  </div>
+
+  {% for x in tarefa %}
+    <div class="row mb-2">
+      <div class="col">{{ x.nome }}</div>
+      <div class="col ">{{ x.prazo }}</div>
+      <div class="col {% if x.status == 'concluído' %}text-success{% endif %}">{{ x.status }}</div>
+      <div class="col">
+        {% if x.prazo < hoje %}
+          <span class="text-danger">Atrasado</span>
+        {% elif x.prazo == hoje %}
+          <span class="text-warning">Vence hoje</span>
+        {% else %}
+          <span class="text-success">No prazo</span>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+
+{% endblock context %}
