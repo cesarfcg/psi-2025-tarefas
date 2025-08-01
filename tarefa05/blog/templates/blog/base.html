@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+</head>
+<body>
+        <nav class="nav nav-dark bg-dark text-primary mx-auto mb-3">
+        <div class="container container-fluid d-flex justify-content-center ">
+            <h1>Meu blog</h1>
+        </div>
+        </nav>
+    <div class='text-center'><h2>{% block titulo %}{% endblock titulo %}</h2></div>
+
+    {% block content %}{% endblock content %}
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+  <div class="container">
+    <p class="mb-0">&copy;  Meu Blog. Todos os direitos reservados.</p>
+  </div>
+</footer>
+</body>
+</html>
